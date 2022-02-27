@@ -1,0 +1,80 @@
+ #include<iostream> //for cin and cout
+#include<vector> //for vector
+#include<fstream> //for ifstream and ofstream
+#include<iomanip> //for setw
+#include<string>
+using namespace std;
+
+int main()
+{
+	ofstream myRent;  //ofstream to store in file
+	ifstream theRent; //ifstream to read file
+	myRent.open("rent.txt");
+	theRent.open("rent.txt");
+	int id, fine;
+	string name1, name2, flat, status;
+	string flatNum, newStatus;
+	newStatus = "not_paid";
+	
+
+	int choice; //to store the user's choice
+	do {
+		//prints the menu
+		cout << "\n1-Add a new rent record.\n2-Display all renters information\n3-Search for rent information by Flat number\n4-Display all rent information that are not paid yet.\n5-Exit.";
+		cout << "\nEnter choice: ";
+		cin >> choice; //stores the user choice
+		switch (choice) {
+			{
+		case 1:
+			cout << "Enter Renter ID: ";
+			cin >> id;
+			cout << "Enter Renter name: ";
+			cin >> name1 >> name2;
+			cout << "Enter Flat number: ";
+			cin >> flat;
+			cout << "Enter Fine: ";
+			cin >> fine;
+			cout << "Enter Status: ";
+			cin >> status;
+			break;
+		case 2:
+			
+			for (int count = 1; count <= id; count++)
+				cout << " " << "Renter Id" << " " << "Renter Name" << " " << "Flat number" << " " << "Fine" << " " << "Status" << endl;
+			    cout << " " << id << " " << name1 << " " << name2 << " " << flat << " " << fine << " " << status << endl;
+			break;
+		case 3:
+			cout << "Enter Flat number: ";
+			cin >> flatNum;
+
+			if (flatNum == flat)
+			{
+				cout << " " << id << " " << name1 << " " << name2 << " " << flat << " " << fine << " " << status << endl;
+				break;
+			}
+
+			else
+				cout << "Here is no information saved on such flat number" << endl;
+
+			break;
+		case 4: cout << " " << "Renter Id" << " " << "Renter Name" << " " << "Flat number" << " " << "Fine" << " " << "Status" << endl;
+			while (status == newStatus)
+			{
+				cout << " " << id << " " << name1 << " " << name2 << " " << flat << " " << fine << " " << status << endl;
+			}
+
+			}
+		default: cout << "Invalid choice\n";
+		}
+	} while (choice != 5); //if choice is 5 then terminates the loop
+
+
+	
+	
+	
+	
+	return 0; //terminates program successfully
+	system("paul")
+}
+ABCD
+123
