@@ -77,4 +77,5 @@ int main()
 	system("paul")
 }
 ABCD
-123
+12345
+all
